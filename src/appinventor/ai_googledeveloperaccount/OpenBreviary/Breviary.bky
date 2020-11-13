@@ -1,0 +1,65 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="wXzZR+F!^RTLWiM_B_|?" x="-1295" y="-700">
+    <mutation component_type="WebViewer" is_generic="false" instance_name="WebViewer1" event_name="BeforePageLoad"></mutation>
+    <field name="COMPONENT_SELECTOR">WebViewer1</field>
+    <statement name="DO">
+      <block type="local_declaration_statement" id="^-WSi8McYEk.pAk.l3z?">
+        <mutation>
+          <localname name="THE_URL"></localname>
+        </mutation>
+        <field name="VAR0">THE_URL</field>
+        <value name="DECL0">
+          <block type="text_join" id="31nDAv{cxDyWa+*A$9~B">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="dhnba/CDZ/`?Lct]G^60">
+                <field name="TEXT">http://www.ibreviary.com/m/breviario.php?s=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="controls_getStartValue" id="HLQ(jYSm5`dq:eN{;`vi"></block>
+            </value>
+          </block>
+        </value>
+        <statement name="STACK">
+          <block type="controls_if" id="K{9~EU7oZIW(ULk?y+E/">
+            <value name="IF0">
+              <block type="logic_negate" id="e=H5)q?kF3^s49fp(:1$">
+                <value name="BOOL">
+                  <block type="logic_compare" id="D_HPADfO^hIG!;-yu2u6">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="{-;.7KC?m+uSZEzuXT#%">
+                        <mutation>
+                          <eventparam name="url"></eventparam>
+                        </mutation>
+                        <field name="VAR">url</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="lexical_variable_get" id="Vf{5,;zM*m7;L3xVp,c!">
+                        <field name="VAR">THE_URL</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="component_method" id="$`^*sSnL3RpHWw}V}@r]">
+                <mutation component_type="WebViewer" method_name="GoToUrl" is_generic="false" instance_name="WebViewer1"></mutation>
+                <field name="COMPONENT_SELECTOR">WebViewer1</field>
+                <value name="ARG0">
+                  <block type="lexical_variable_get" id="t=9[,:#yf5|`gE?MP}@;">
+                    <field name="VAR">THE_URL</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="208" language-version="33"></yacodeblocks>
+</xml>

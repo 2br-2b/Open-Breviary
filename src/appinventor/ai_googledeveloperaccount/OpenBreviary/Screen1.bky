@@ -1,0 +1,156 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="global_declaration" id="sDXpP8vgZdj`oHkDbdY[" x="-1271" y="-684">
+    <field name="NAME">current_hour</field>
+    <value name="VALUE">
+      <block type="text" id="7aTbvTZ6AZw,A9wefkm}">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="JyK`jYqT;IY7p.$ebW:9" x="-1273" y="-644">
+    <field name="NAME">LIST_OF_HOURS</field>
+    <value name="VALUE">
+      <block type="dictionaries_create_with" id="di1SBaYoBfJk;TS=)7[8">
+        <mutation items="5"></mutation>
+        <value name="ADD0">
+          <block type="pair" id="t9D#m(Ak@1+9zCs*)pd{">
+            <value name="KEY">
+              <block type="text" id="iNHudPeN]dq@f%a2lVzO">
+                <field name="TEXT">Office of Readings</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="text" id="?M(m)0E4|cx@9t#aj@ah">
+                <field name="TEXT">ufficio_delle_letture</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="ADD1">
+          <block type="pair" id="]xmVi}*B9%}{h*A+7AN~">
+            <value name="KEY">
+              <block type="text" id="ev$!BZ+dV8dJalaSa8h#">
+                <field name="TEXT">Morning Prayer</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="text" id="XUw290o*nMIauT)KI@|p">
+                <field name="TEXT">lodi</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="ADD2">
+          <block type="pair" id="AVDRnO;8Ai@:6/RRNayn">
+            <value name="KEY">
+              <block type="text" id="$-#=7ip/3i-h.q;B%/8T">
+                <field name="TEXT">Daytime Prayers</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="text" id="D`f=BRLoG`+^x]|)eJz5">
+                <field name="TEXT">ora_media</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="ADD3">
+          <block type="pair" id="E}#)S#dH:wWfXKu[OewA">
+            <value name="KEY">
+              <block type="text" id="B%01B8)t|L^`2%+D22}d">
+                <field name="TEXT">Evening Prayer</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="text" id="*%/EFrK5@cMDKv0ukD^-">
+                <field name="TEXT">vespri</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="ADD4">
+          <block type="pair" id="~Naay0VvT9IOxLi-?Rhg">
+            <value name="KEY">
+              <block type="text" id="pb5R*Wx-tr$0ZYL,~]w{">
+                <field name="TEXT">Night Prayer</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="text" id="2}D/zhB24N$+28|#oLwD">
+                <field name="TEXT">compieta</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="8eV@OycC^-I8Hh(B[Ox-" x="-1220" y="-373">
+    <mutation component_type="Button" is_generic="true" event_name="Click"></mutation>
+    <statement name="DO">
+      <block type="lexical_variable_set" id="U+0e6%zdJ90-`yy5-i^]">
+        <field name="VAR">global current_hour</field>
+        <value name="VALUE">
+          <block type="dictionaries_lookup" id="kJoD`1HGt#C6UfkRp(`|">
+            <value name="KEY">
+              <block type="text_replace_all" id="34*g7Uqt;;^GP/D6^.yP">
+                <value name="TEXT">
+                  <block type="component_set_get" id="|$qPU?_PIny$x3|hy02,">
+                    <mutation component_type="Button" set_or_get="get" property_name="Text" is_generic="true"></mutation>
+                    <field name="PROP">Text</field>
+                    <value name="COMPONENT">
+                      <block type="lexical_variable_get" id="6T|/e(9OU/{bV@|JgU-:">
+                        <mutation>
+                          <eventparam name="component"></eventparam>
+                        </mutation>
+                        <field name="VAR">component</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="SEGMENT">
+                  <block type="text" id="^KF|zQEjUY[RSZw]]@+0">
+                    <field name="TEXT">_</field>
+                  </block>
+                </value>
+                <value name="REPLACEMENT">
+                  <block type="text" id="$hXL$z+}zCUzrNaQtPhY">
+                    <field name="TEXT"> </field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="DICT">
+              <block type="lexical_variable_get" id="r:+SteBtHWLuM#xZYtyh">
+                <field name="VAR">global LIST_OF_HOURS</field>
+              </block>
+            </value>
+            <value name="NOTFOUND">
+              <block type="lexical_variable_get" id="(f@6y8aV],ZS?O`qa]+`">
+                <mutation>
+                  <eventparam name="component"></eventparam>
+                </mutation>
+                <field name="VAR">component</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_openAnotherScreenWithStartValue" id="0LLaEI{BWgd7p#,v!U0V">
+            <value name="SCREENNAME">
+              <block type="text" id="kJej]#e}-iA~n`*3ytgu">
+                <field name="TEXT">Breviary</field>
+              </block>
+            </value>
+            <value name="STARTVALUE">
+              <block type="lexical_variable_get" id="?a97#+FHFAH53tV5a0pl">
+                <field name="VAR">global current_hour</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="208" language-version="33"></yacodeblocks>
+</xml>
